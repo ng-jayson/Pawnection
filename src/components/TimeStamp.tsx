@@ -132,7 +132,7 @@ const TimeStamp: React.FC<{ datetimeISO: string }> = ({ datetimeISO }) => {
 
   return (
     <div>
-      <p className="text-xs mt-2 truncate leading-5 text-gray-500 ease-in-out">
+      <p className="text-xs truncate leading-5 text-gray-500 ease-in-out">
         {dayDiff >= 365
           ? `${Math.floor(dayDiff / 365)} ${
               Math.floor(dayDiff / 365) === 1 ? "year" : "years"
