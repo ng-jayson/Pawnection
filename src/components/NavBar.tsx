@@ -225,7 +225,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                     <Link
                       prefetch={false}
                       href="/adopt"
-                      className="text-primary text-sm font-medium hover:bg-submain py-2 px-4 rounded-md ease-in-out duration-200"
+                      className="text-primary text-sm font-medium hover:bg-main/70 py-2 px-4 rounded-md ease-in-out duration-200"
                     >
                       Adopt
                     </Link>
