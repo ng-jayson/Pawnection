@@ -198,32 +198,6 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                     onClick={toggleMenu}
                   >
                     <div className="flex rounded-lg py-1 px-2 hover:bg-main/70 ease-in-out duration-200">
-                      <div>
-                        <Image
-                          src={
-                            !currentUser?.image
-                              ? "/icon.png"
-                              : currentUser?.image
-                                    .split("image/upload")[0]
-                                    .includes("cloudinary")
-                                ? `${
-                                    currentUser?.image?.split(
-                                      "/image/upload/",
-                                    )[0]
-                                  }/image/upload/c_fill,h_160,w_160/${
-                                    currentUser?.image?.split(
-                                      "/image/upload/",
-                                    )[1]
-                                  }`
-                                : currentUser?.image
-                          }
-                          width={48}
-                          height={48}
-                          alt="User avatar"
-                          className="rounded-full w-full h-full"
-                        />
-                      </div>
-
                       <div className="ml-4">
                         <p className="text-[18px] font-bold">
                           {currentUser?.username}
@@ -239,7 +213,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                 <li>
                   <Link
                     prefetch={false}
-                    href="/lost-and-found"
+                    href="/lostAndFound"
                     onClick={toggleMenu}
                     className="text-primary text-sm font-medium hover:bg-main/70 py-2 px-4 rounded-md ease-in-out duration-200"
                   >
@@ -269,11 +243,11 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                 <li>
                   <Link
                     prefetch={false}
-                    href="/community"
+                    href="/explore"
                     onClick={toggleMenu}
                     className="text-primary text-sm font-medium hover:bg-main/70 py-2 px-4 rounded-md ease-in-out duration-200"
                   >
-                    Community
+                    Explore
                   </Link>
                 </li>
                 <li>
