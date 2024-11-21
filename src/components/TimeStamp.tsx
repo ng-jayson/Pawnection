@@ -63,7 +63,18 @@ function handleTimeZoneAdjustment(time: string[], timezoneOffset: string) {
   return [String(newHour), dayChange]
 }
 
-const TimeStamp: React.FC<TimeStampProps> = ({ date, time }) => {
+const TimeStamp: React.FC<{ datetimeISO: string }> = ({ datetimeISO }) => {
+  const dateTime = new Date(datetimeISO)
+  let date = [
+    dateTime.getFullYear().toString(),
+    (dateTime.getMonth() + 1).toString(),
+    dateTime.getDate().toString(),
+  ]
+  const time = [
+    dateTime.getHours().toString(),
+    dateTime.getMinutes().toString(),
+  ]
+
   const currentDate = new Date()
   const currDate = [
     currentDate.getFullYear().toString(),
