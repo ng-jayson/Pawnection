@@ -79,7 +79,7 @@ const Profile = ({
         <div className="flex items-center gap-8 py-[60px]">
           <div className="flex flex-col items-center space-y-4">
             <Image
-              className="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-primary"
+              className="object-cover w-20 h-20 md:w-40 md:h-40 p-1 rounded-full ring-2 ring-primary"
               src={user?.image ? user.image : "/icon.png"}
               width={160}
               height={160}
