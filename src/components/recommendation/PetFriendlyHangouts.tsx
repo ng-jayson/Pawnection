@@ -18,7 +18,7 @@ const PetFriendlyHangouts = ({ hangouts }: { hangouts: HangoutLocation[] }) => {
   return (
     <div className="space-y-6 flex flex-col items-center justify-center w-full max-w-[1240px] mx-auto px-4">
       <div className="py-[60px]">
-        <HeaderTitle className="max-w-full">
+        <HeaderTitle className="max-w-full text-[40px] md:text-5xl">
           Recommended Pet-Friendly Hangouts
         </HeaderTitle>
 

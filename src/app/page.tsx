@@ -69,8 +69,8 @@ const hangouts = [
 export default async function Home() {
   return (
     <div className="w-full max-w-[1240px] mx-auto md:px-0 px-4">
-      <div className="py-[60px]">
-        <div className="mx-auto flex flex-col items-center">
+      <div className="pt-[60px]">
+        <div className="mx-auto flex flex-col items-center gap-24 md:gap-32">
           <WelcomeSection />
           <PetTips />
           <Testimonials />

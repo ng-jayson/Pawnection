@@ -82,7 +82,7 @@ function PetTips() {
         </div>
         <div className={tipStyles["hero-column"]}>
           <div className={tipStyles["hero-text-content"]}>
-            <h1 className={tipStyles["hero-title"]}>Pet Tips and Advice</h1>
+            <h1 className={tipStyles["hero-title"]}>Pet Tips</h1>
             <p className={tipStyles["hero-subtitle"]}>
               Discover helpful articles and expert advice
             </p>

@@ -47,18 +47,18 @@ const PetInfo: React.FC<PetInfoProps> = ({ name, breed, age, imageUrl }) => {
         width={60}
         height={60}
       />
-      <div className="flex-1 flex flex-col">
-        <h2 className="text-[20px]">{name}</h2>
+      <div className="flex-1 flex flex-col text-sm md:text-[20px]">
+        <h2>{name}</h2>
         <p className="text-mainAccent">{breed}</p>
       </div>
-      <p className="mr-10 md:mr-2">{age}</p>
+      <p className="mr-0 md:mr-2">{age}</p>
     </div>
   )
 }
 
 const FeaturedPets: React.FC = () => {
   return (
-    <div className="py-20 px-10">
+    <div>
       <section className={styles["featured-pets"]}>
         <div className={styles["pet-showcase"]}>
           <div className={styles["showcase-image"]}>
@@ -71,7 +71,7 @@ const FeaturedPets: React.FC = () => {
             />
           </div>
           <div className={styles["showcase-details"]}>
-            <h2 className="pb-5 font-bold text-5xl text-left ml-7">
+            <h2 className="pb-5 font-bold text-[40px] md:text-5xl text-center md:text-left mx-auto md:ml-7">
               Adoptable Pets
             </h2>
             <div className="py-5  ml-[-15px]">

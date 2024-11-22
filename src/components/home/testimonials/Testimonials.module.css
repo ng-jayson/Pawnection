@@ -1,13 +1,6 @@
 .testimonials-section {
   justify-content: center;
   align-self: stretch;
-  padding: 60px 80px;
-}
-
-@media (max-width: 991px) {
-  .testimonials-section {
-    padding: 0 20px;
-  }
 }
 
 .testimonials-container {
@@ -44,6 +37,7 @@
   color: #242851;
   letter-spacing: -0.58px;
   margin: auto 0;
+  text-align: left;
   font:
     800 48px/100% Inter,
     -apple-system,
@@ -58,7 +52,7 @@
     flex-direction: column;
     align-items: center;
     max-width: 100%;
-    margin-top: 40px;
+    text-align: center;
     font-size: 40px;
   }
 }
@@ -84,7 +78,7 @@
   .testimonials-list {
     flex-direction: column;
     align-items: stretch;
-    gap: 0px;
+    gap: 20px;
   }
 }
 

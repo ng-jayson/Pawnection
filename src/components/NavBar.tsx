@@ -35,27 +35,32 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
   }
 
   return (
-    <div className="sticky top-0 z-[100] flex w-full place-content-between px-12 py-4 drop-shadow md:px-24 items-center border-b bg-main">
-      <Image
-        src="/pawnection.svg"
-        alt="Pawnection"
-        width={0}
-        height={0}
-        priority={true}
-        className="cursor-pointer h-[30px] w-[187.5px]"
-        onClick={() => {
-          router.push("/")
-        }}
-      />
+    <div className="sticky top-0 z-[100] flex w-full place-content-between px-4 py-4 drop-shadow md:px-8 lg:px-16 items-center border-b bg-main">
+      <div className="flex items-center justify-between w-full md:w-auto">
+        <Image
+          src="/pawnection.svg"
+          alt="Pawnection"
+          width={0}
+          height={0}
+          priority={true}
+          className="cursor-pointer h-[30px] w-[187.5px]"
+          onClick={() => {
+            router.push("/")
+          }}
+        />
+        <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
+          <Menu size={24} />
+        </div>
+      </div>
       <NavigationMenu>
-        <NavigationMenuList className="hidden sm:flex">
+        <NavigationMenuList className="hidden md:flex space-x-4">
           {session.status === "authenticated" && (
             <>
-              <div className="flex items-center space-x-1 ">
+              <div className="flex items-center">
                 <Link
                   prefetch={false}
                   href="/lostAndFound"
-                  className="text-primary text-sm font-medium hover:bg-submain py-2 px-4 rounded-md ease-in-out duration-200"
+                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
                 >
                   Lost & Found
                 </Link>
@@ -63,7 +68,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                   <Link
                     prefetch={false}
                     href="/adopt"
-                    className="text-primary text-sm font-medium hover:bg-submain py-2 px-4 rounded-md ease-in-out duration-200"
+                    className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
                   >
                     Adopt
                   </Link>
@@ -71,22 +76,22 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                   <Link
                     prefetch={false}
                     href="/adoptionCenter"
-                    className="text-primary text-sm font-medium hover:bg-submain rounded-md ease-in-out duration-200 py-2 px-4"
+                    className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain rounded-md ease-in-out duration-200 p-2"
                   >
-                    Adoption Management
+                    Adoption
                   </Link>
                 )}
                 <Link
                   prefetch={false}
                   href="/explore"
-                  className="text-primary text-sm font-medium hover:bg-submain py-2 px-4 rounded-md ease-in-out duration-200"
+                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
                 >
                   Explore
                 </Link>
                 <Link
                   prefetch={false}
                   href="/recommendations"
-                  className="text-primary text-sm font-medium hover:bg-submain rounded-md ease-in-out duration-200 py-2 px-4"
+                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
                 >
                   Recommendations
                 </Link>
@@ -95,9 +100,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
           )}
           {session.status === "authenticated" && (
             <>
-              <div className="mr-4">
-                <PostForm />
-              </div>
+              <PostForm />
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Image
@@ -169,18 +172,11 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
             )
           )}
         </NavigationMenuList>
-        <div className="sm:hidden cursor-pointer pl-24 flex items-center space-x-4">
-          {session.status === "authenticated" && (
-            <>
-              <Menu size={24} onClick={toggleMenu} />
-            </>
-          )}
-        </div>
         <div
           className={
             isOpen
-              ? "fixed right-0 top-0 w-[65%] sm:hidden h-screen bg-submain p-10 ease-in duration-500"
-              : "fixed right-[-100%] top-0 p-10 ease in duration-500"
+              ? "fixed right-0 top-0 w-[65%] md:hidden h-screen bg-submain p-10 ease-in duration-500"
+              : "fixed right-[-100%] hidden top-0 p-10 ease in duration-500"
           }
         >
           <div className="flex w-full items-center justify-end">
@@ -198,7 +194,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                     onClick={toggleMenu}
                   >
                     <div className="flex rounded-lg py-1 px-2 hover:bg-main/70 ease-in-out duration-200">
-                      <div className="ml-4">
+                      <div className="ml-2">
                         <p className="text-[18px] font-bold">
                           {currentUser?.username}
                         </p>
@@ -236,7 +232,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                       onClick={toggleMenu}
                       className="text-primary text-sm font-medium hover:bg-main/70 rounded-md ease-in-out duration-200 py-2 px-4"
                     >
-                      Adoption Management
+                      Adoption
                     </Link>
                   )}
                 </li>

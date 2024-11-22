@@ -4,12 +4,12 @@
   flex-direction: column;
   justify-content: center;
   max-width: 590px;
-  padding: 20px 0;
+  margin-top: 20px;
+  gap: 20px;
 }
 .main-content {
   justify-content: center;
   width: 100%;
-  padding: 60px 60px;
 }
 
 @media (max-width: 991px) {
@@ -19,13 +19,14 @@
     align-items: center;
     justify-content: center;
     max-width: 100%;
-    padding: 0 20px;
   }
 }
 
 .hero-section {
   gap: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 991px) {
@@ -78,19 +79,17 @@
   margin-top: 6px;
   padding-bottom: 20px;
   flex-direction: column;
-  
 }
 
 @media (max-width: 991px) {
   .hero-text-content {
     max-width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
 }
-
-
 
 .hero-title {
   color: #242851;
@@ -102,29 +101,34 @@
     Helvetica,
     sans-serif;
   margin: 0;
+  text-align: left;
 }
 
 @media (max-width: 991px) {
   .hero-title {
     max-width: 100%;
+    margin: 0 auto;
     font-size: 40px;
+    text-align: center;
   }
 }
 
 .hero-subtitle {
   color: #242851;
-  margin-top: 24px;
+  margin-top: 12px;
   font:
     400 20px/140% Inter,
     -apple-system,
     Roboto,
     Helvetica,
     sans-serif;
+  text-align: left;
 }
 
 @media (max-width: 991px) {
   .hero-subtitle {
-    max-width: 100%;
+    max-width: 250px;
+    text-align: center;
   }
 }
 

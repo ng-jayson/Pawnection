@@ -58,7 +58,7 @@ function Testimonials() {
     <section className={styles["testimonials-section"]}>
       <div className={styles["testimonials-container"]}>
         <div className={styles["testimonials-column"]}>
-          <h2 className={styles["testimonials-title"]}>What Our Users Say</h2>
+          <h2 className={styles["testimonials-title"]}>What Users Say</h2>
         </div>
         <div className={styles["testimonials-column"]}>
           <div className={styles["testimonials-wrapper"]}>

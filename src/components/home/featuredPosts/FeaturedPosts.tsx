@@ -92,7 +92,7 @@ function Post({ user, imageSrc, imageAlt, text, tag }: PostProps) {
 
   return (
     <article
-      className="story-card flex flex-col bg-white rounded-md border border-solid shadow-md border-black border-opacity-10 pb-2 mb-10 transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg hover:scale-105 hover:z-10"
+      className="story-card flex flex-col bg-white rounded-md border border-solid shadow-md border-black border-opacity-10  transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg hover:scale-105 hover:z-10"
       onClick={() => router.push("/explore")}
     >
       <header className="flex gap-2 p-3 whitespace-nowraps max-md:flex-wrap">
@@ -117,9 +117,6 @@ const FeaturedPosts: React.FC = () => {
   return (
     <section className={styles["latest-stories"]}>
       <h2 className={styles["section-title"]}>Latest Pet Posts</h2>
-      <p className={styles["section-description"]}>
-        Share your pets&apos; adventure with the community
-      </p>
       <div className={styles["stories-container"]}>
         {postDatas.map((post) => (
           <Post key={post.user.username} {...post} />

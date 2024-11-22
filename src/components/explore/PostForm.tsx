@@ -185,7 +185,7 @@ const PostForm = () => {
       <DialogTrigger asChild>
         <Button className="h-9">
           <Plus className="w-4 h-4 mr-2" />
-          Create post
+          Post
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] max-h-[70vh] overflow-y-auto">
