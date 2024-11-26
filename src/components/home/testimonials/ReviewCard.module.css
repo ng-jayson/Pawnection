@@ -17,6 +17,13 @@
   line-height: 150%;
 }
 
+@media (max-width: 768px) {
+  .review-card {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
 .user-info {
   display: flex;
   align-items: center;

@@ -18,9 +18,9 @@ const PetHangoutMap = () => {
   ]
 
   return (
-    <div className="space-y-6 flex flex-col items-center justify-center w-full max-w-[1240px] mx-auto md:px-0 px-4">
+    <div className="space-y-6 flex flex-col items-center justify-center w-[87.2vw] md:w-full max-w-[1240px] mx-auto md:px-0 px-4">
       <div className="space-y-6">
-        <HeaderTitle className="max-w-full">
+        <HeaderTitle className="max-w-full text-[40px] md:text-5xl">
           See them on our mini map!
         </HeaderTitle>
 
@@ -28,7 +28,7 @@ const PetHangoutMap = () => {
           center={[1.2985, 103.8541]}
           zoom={13}
           scrollWheelZoom={false}
-          className="h-[312px] w-[1100px]"
+          className="h-[312px] w-[87.2vw] md:w-[1240px]"
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
