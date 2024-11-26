@@ -170,9 +170,12 @@ const LostPetReportDialog = ({
         <DialogOverlay className="DialogOverlay" />
         <DialogContent className="DialogContent overflow-y-auto max-h-[80vh]">
           <DialogTitle className="DialogTitle">Report Missing Pet</DialogTitle>
-          <form onSubmit={onSubmit} className="flex gap-10">
-            <div className="w-1/3 flex flex-col items-center justify-start">
-              <div className="w-48 h-48 border rounded-md overflow-hidden flex items-center justify-center relative">
+          <form
+            onSubmit={onSubmit}
+            className="flex gap-10 flex-col md:flex-row"
+          >
+            <div className="md:w-1/3 flex flex-col items-center w-full justify-center md:justify-start">
+              <div className="w-48 h-48 border rounded-md overflow-hidden flex mx-auto items-center justify-center relative">
                 <div className="absolute inset-0">
                   {petImagePreview && (
                     <Image

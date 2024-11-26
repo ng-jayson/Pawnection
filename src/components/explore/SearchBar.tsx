@@ -52,7 +52,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className="flex flex-row space-x-2 items-center w-[89.2vw] mx-auto md:w-full">
+    <div className="flex flex-row space-x-2 items-center w-[89.3333vw] mx-auto md:w-full">
       <div className="flex flex-row items-center">
         <div className="relative flex grow items-center bg-white rounded-md">
           <Input

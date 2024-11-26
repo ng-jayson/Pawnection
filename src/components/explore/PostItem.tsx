@@ -189,11 +189,11 @@ const PostItem = ({
   }
 
   return (
-    <div className="rounded-xl border bg-white h-full w-[89.2vw] md:w-[598px]">
+    <div className="rounded-xl border bg-white h-full w-[89.3333vw] md:w-[598px]">
       <div className="flex items-center p-4 md:px-6 md:py-4 justify-between">
         <div className="transition-all duration-300 ease-in-out hover:cursor-pointer ">
           <Link href={`/profile/${post.user.username}`} target="_blank">
-            <div className="flex flex-row items-center space-x-2 md:space-x-3  ">
+            <div className="flex flex-row items-center space-x-3  ">
               <Image
                 src={
                   !post.user?.image
@@ -213,8 +213,12 @@ const PostItem = ({
                 alt={post.user.username || "User"}
                 className="rounded-full h-10 w-10"
               />
-              <span className="font-bold">{post.user.username}</span>
-              <TimeStamp datetimeISO={time} />
+              <div className="flex flex-col items-center justify-start md:gap-0.5">
+                <span className="font-bold self-start">
+                  {post.user.username}
+                </span>
+                <TimeStamp datetimeISO={time} />
+              </div>
             </div>
           </Link>
         </div>

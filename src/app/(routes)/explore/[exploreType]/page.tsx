@@ -26,7 +26,7 @@ async function ExploreTypePage({
     redirect("/explore")
 
   return (
-    <div className="flex justify-center w-[89.2vw] md:w-full max-w-[1240px] mx-auto md:px-0 px-6">
+    <div className="flex justify-center w-[89.3333vw] md:w-full max-w-[1240px] mx-auto md:px-0 px-6">
       <div className="py-[40px]">
         <div className="flex flex-col mx-auto space-y-4">
           <SearchBar />

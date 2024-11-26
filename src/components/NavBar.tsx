@@ -60,7 +60,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                 <Link
                   prefetch={false}
                   href="/lostAndFound"
-                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
+                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 md:px-4 rounded-md ease-in-out duration-200"
                 >
                   Lost & Found
                 </Link>
@@ -68,7 +68,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                   <Link
                     prefetch={false}
                     href="/adopt"
-                    className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
+                    className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 md:px-4 rounded-md ease-in-out duration-200"
                   >
                     Adopt
                   </Link>
@@ -76,7 +76,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                   <Link
                     prefetch={false}
                     href="/adoptionCenter"
-                    className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain rounded-md ease-in-out duration-200 p-2"
+                    className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 md:px-4 rounded-md ease-in-out duration-200"
                   >
                     Adoption
                   </Link>
@@ -84,14 +84,14 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                 <Link
                   prefetch={false}
                   href="/explore"
-                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
+                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 md:px-4 rounded-md ease-in-out duration-200"
                 >
                   Explore
                 </Link>
                 <Link
                   prefetch={false}
                   href="/recommendations"
-                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 rounded-md ease-in-out duration-200"
+                  className="whitespace-nowrap text-primary text-xs xl:text-sm font-medium hover:bg-submain p-2 md:px-4 rounded-md ease-in-out duration-200"
                 >
                   Recommendations
                 </Link>
@@ -175,7 +175,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
         <div
           className={
             isOpen
-              ? "fixed right-0 top-0 w-[65%] md:hidden h-screen bg-submain p-10 ease-in duration-500"
+              ? "fixed right-0 top-0 w-[65%] md:hidden h-screen bg-submain p-4 ease-in duration-500"
               : "fixed right-[-100%] hidden top-0 p-10 ease in duration-500"
           }
         >

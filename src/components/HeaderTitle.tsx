@@ -7,20 +7,19 @@ function HeaderTitle({
   className,
   description,
   descriptionClassName,
-  onClick
+  onClick,
 }: {
   children: React.ReactNode
   className?: string
   description?: string
   descriptionClassName?: string
-  onClick?: () => void; 
+  onClick?: () => void
 }) {
   return (
-    <div  onClick={onClick}> 
-
+    <div onClick={onClick}>
       <h1
         className={cn(
-          "text-4xl leading-[-1.2%] font-extrabold max-w-lg text-center",
+          "text-lg md:text-4xl leading-[-1.2%] font-extrabold max-w-lg text-center whitespace-nowrap",
           className,
         )}
       >

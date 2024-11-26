@@ -75,12 +75,12 @@ const AllLostPetReports = () => {
   return (
     <div className="container">
       <div className="py-[60px]">
-        <div className="header-container flex justify-center items-center mb-12 space-x-10">
+        <div className="header-container flex justify-center items-center mb-8 md:mb-12 md:space-x-10 space-x-4">
           <HeaderTitle className="header-title max-w-full cursor-pointer transition-all duration-300 ease-in-out">
             Lost Pet Reports
           </HeaderTitle>
           <HeaderTitle
-            className="max-w-full cursor-pointer transition-all duration-300 text-3xl ease-in-out opacity-20 hover:opacity-100 hover:scale-110"
+            className="max-w-full cursor-pointer md:text-3xl transition-all duration-300 ease-in-out opacity-20 hover:opacity-100 hover:scale-110"
             onClick={navToFoundPetReports}
           >
             Found Pet Reports
@@ -113,31 +113,34 @@ const AllLostPetReports = () => {
               <Input
                 type="text"
                 placeholder="Search..."
-                className="pr-24 py-2 grow bg-white outline-none rounded-md"
+                className="pr-16 md:pr-24 py-2 grow bg-white outline-none rounded-md"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {searchTerm.length !== 0 && (
                 <Button
                   onClick={clearSearch}
-                  className="absolute right-8"
+                  className="absolute right-4 md:right-8"
                   variant="search"
                 >
                   <X className="text-gray-500 hover:text-primary duration-300 ease-in-out transition-all w-5 h-5" />
                 </Button>
               )}
-              <Button className="absolute right-2 pr-2" variant="search">
+              <Button
+                className="absolute right-0 md:right-2 pr-2"
+                variant="search"
+              >
                 <Search className="text-gray-500 w-5 h-5" />
               </Button>
             </div>
           </div>
 
           <Button
-            className="w-48"
+            className="w-24 md:w-48"
             onClick={() => setIsLostPetReportDialogOpen(true)}
           >
-            <PawPrint className="w-4 h-4 text-white mr-2" />
-            Report missing pet
+            <PawPrint className="w-4 h-4 text-white mr-2 hidden md:block" />
+            Missing
           </Button>
 
           <LostPetReportDialog
@@ -225,13 +228,13 @@ const AllLostPetReports = () => {
                   ))}
                 </div>
               ) : (
-                <div className="col-span-full text-center mt-4">
+                <div className="col-span-full text-center mt-8">
                   No reports found
                 </div>
               )
             })()
           ) : (
-            <div className="col-span-full text-center mt-4">
+            <div className="col-span-full text-center mt-8">
               No reports found
             </div>
           )

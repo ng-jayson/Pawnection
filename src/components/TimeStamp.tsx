@@ -131,19 +131,17 @@ const TimeStamp: React.FC<{ datetimeISO: string }> = ({ datetimeISO }) => {
   }
 
   return (
-    <div>
-      <p className="text-xs truncate leading-5 text-gray-500 ease-in-out">
-        {dayDiff >= 365
-          ? `${Math.floor(dayDiff / 365)} ${
-              Math.floor(dayDiff / 365) === 1 ? "year" : "years"
+    <p className="text-xs truncate leading-5 text-gray-500 ease-in-out self-start">
+      {dayDiff >= 365
+        ? `${Math.floor(dayDiff / 365)} ${
+            Math.floor(dayDiff / 365) === 1 ? "year" : "years"
+          } ago`
+        : dayDiff >= 30
+          ? `${Math.floor(dayDiff / 30)} ${
+              Math.floor(dayDiff / 30) === 1 ? "month" : "months"
             } ago`
-          : dayDiff >= 30
-            ? `${Math.floor(dayDiff / 30)} ${
-                Math.floor(dayDiff / 30) === 1 ? "month" : "months"
-              } ago`
-            : `${dayDiff} ${dayDiff === 1 ? "day" : "days"} ago`}
-      </p>
-    </div>
+          : `${dayDiff} ${dayDiff === 1 ? "day" : "days"} ago`}
+    </p>
   )
 }
 
