@@ -7,8 +7,8 @@ import React from "react"
 
 const AdoptionCenter = ({ currUser }: { currUser?: SafeUser | null }) => {
   return (
-    <div className="w-full max-w-[1240px] mx-auto sm:px-8 px-8">
-      <div className="md:py-[30px] lg:py-[60px]">
+    <div className="w-[89.3333vw] md:w-full max-w-[1240px] mx-auto px-0 md:px-8">
+      <div className="py-[60px]">
         <div className="flex mx-auto flex-col items-center mb-12">
           <HeaderTitle className="max-md:text-2xl">
             {currUser?.username ?? "My"} adoption center

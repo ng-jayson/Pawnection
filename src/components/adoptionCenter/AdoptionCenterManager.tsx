@@ -140,9 +140,9 @@ export default function AdoptionCenterManager({
           </AlertDialog>
         </div>
       </div>
-      <div className="grid grid-cols-3 max-md:grid-cols-1 gap-12 mt-12 max-md:w-3/4 mx-auto">
+      <div className="w-[89.3333vw] md:w-full flex flex-col md:flex-row gap-12 mt-12 mx-auto">
         <div className="rounded-xl bg-white h-full col-span-1 shadow-lg">
-          <div>
+          <div className="md:w-[440px] md:h-auto">
             <Image
               src={data.imageUrl}
               alt={data.name}
@@ -157,19 +157,19 @@ export default function AdoptionCenterManager({
           </div>
         </div>
 
-        <div className="h-full col-span-2">
-          <HeaderTitle className="text-left text-2xl">Requests</HeaderTitle>
+        <div className="w-full h-full col-span-2 flex flex-col">
+          <p className="text-left text-lg font-semibold">Requests</p>
 
-          <div className="mt-6">
+          <div className="mt-6 w-full flex-grow flex">
             {data.adoptionRequests.length === 0 ? (
               <p>No requests yet</p>
             ) : (
-              <div className="grid grid-cols-1 gap-4">
+              <div className="flex flex-col gap-4 w-full">
                 {data.adoptionRequests.map((request) => (
                   <div
                     key={request.id}
                     className={cn(
-                      "rounded-xl bg-white p-4",
+                      "rounded-xl bg-white p-4 flex-grow",
                       "flex justify-between items-center",
                     )}
                   >

@@ -81,7 +81,7 @@ function AdoptionCenterPost() {
           <Input
             type="text"
             placeholder="Search..."
-            className="pr-20 py-2 grow bg-white outline-none rounded-md"
+            className="pr-16 md:pr-24 py-2 grow bg-white outline-none rounded-md"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -103,13 +103,13 @@ function AdoptionCenterPost() {
             buttonVariants({
               variant: "default",
 
-              className: "w-fit bg-mainAccent hover:bg-mainAccent/90",
+              className: "w-24 md:w-48 bg-mainAccent hover:bg-mainAccent/90",
             }),
           )}
           href="/adoptionCenter/post"
         >
           <HeartHandshake className="w-4 h-4 mr-2" />
-          Create adoption listing
+          Add
         </Link>
       </div>
 
@@ -118,7 +118,7 @@ function AdoptionCenterPost() {
           <Loading />
         </div>
       ) : filteredData.length > 0 ? (
-        <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 sm:gap-6 lg:gap-7 w-full">
+        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-6">
           {filteredData.map((item) => (
             <div
               key={item.id}
@@ -153,7 +153,7 @@ function AdoptionCenterPost() {
           ))}
         </div>
       ) : (
-        <div className="col-span-full text-center mt-4">No results found</div>
+        <div className="col-span-full text-center mt-8">No results found</div>
       )}
     </>
   )

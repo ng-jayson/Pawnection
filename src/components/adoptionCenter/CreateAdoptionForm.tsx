@@ -157,7 +157,7 @@ function CreateAdoptionForm() {
       <div className="py-[60px]">
         <BackButton />
         <div className="md:grid grid-cols-1 md:grid-cols-3">
-          <div className="flex flex-col justify-end py-3 col-span-1 pr-3">
+          <div className="flex flex-col justify-end ,md:py-3 col-span-1 md:pr-3">
             <div className="">
               {selectedImage ? (
                 <Image
@@ -213,8 +213,8 @@ function CreateAdoptionForm() {
           </div>
 
           <div className="col-span-2">
-            <div className="py-3 max-lg:py-0 rounded-lg px-6 w-full">
-              <HeaderTitle className="max-w-full max-lg:text-2xl">
+            <div className="py-3 max-lg:py-0 rounded-lg md:px-6 w-full">
+              <HeaderTitle className="mt-8 md:mt-0 max-w-full max-lg:text-2xl">
                 Create pet adoption
               </HeaderTitle>
 
@@ -257,7 +257,7 @@ function CreateAdoptionForm() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="space-y-1 max-lg:space-y-0">
+                  <div className="space-y-2 max-lg:space-y-0">
                     <Label htmlFor="gender" aria-required="true">
                       Pet Gender
                     </Label>

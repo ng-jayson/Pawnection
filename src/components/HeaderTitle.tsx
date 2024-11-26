@@ -19,7 +19,7 @@ function HeaderTitle({
     <div onClick={onClick}>
       <h1
         className={cn(
-          "text-lg md:text-4xl leading-[-1.2%] font-extrabold max-w-lg text-center whitespace-nowrap",
+          "text-lg md:text-4xl leading-[-1.2%] font-extrabold text-center",
           className,
         )}
       >
