@@ -175,8 +175,8 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
         <div
           className={
             isOpen
-              ? "fixed right-0 top-0 w-[65%] md:hidden h-screen bg-submain p-4 ease-in duration-500"
-              : "fixed right-[-100%] hidden top-0 p-10 ease in duration-500"
+              ? "fixed right-0 top-0 w-[65%] md:hidden h-screen bg-submain p-4"
+              : "hidden"
           }
         >
           <div className="flex w-full items-center justify-end">
@@ -221,6 +221,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                     <Link
                       prefetch={false}
                       href="/adopt"
+                      onClick={toggleMenu}
                       className="text-primary text-sm font-medium hover:bg-main/70 py-2 px-4 rounded-md ease-in-out duration-200"
                     >
                       Adopt
@@ -251,13 +252,13 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                     prefetch={false}
                     href="/recommendations"
                     onClick={toggleMenu}
-                    className="text-primary text-sm font-medium hover:bg-main/70 rounded-md ease-in-out duration-200 py-2 px-4"
+                    className="text-primary text-sm font-medium hover:bg-main/70 py-2 px-4 rounded-md ease-in-out duration-200"
                   >
                     Recommendations
                   </Link>
                 </li>
                 <li>
-                  <div className="ml-3" onClick={toggleMenu}>
+                  <div className="ml-3 " onClick={toggleMenu}>
                     <PostForm />
                   </div>
                 </li>

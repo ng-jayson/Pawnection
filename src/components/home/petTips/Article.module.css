@@ -21,6 +21,15 @@
   width: 18%;
 }
 
+@media (max-width: 768px) {
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .article-image {
   align-self: stretch;
   aspect-ratio: 1;
@@ -51,6 +60,14 @@
     sans-serif;
   letter-spacing: -0.14px;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .title,
+  .subtitle,
+  .description {
+    text-align: center;
+  }
 }
 
 .subtitle {
