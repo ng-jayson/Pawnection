@@ -62,12 +62,16 @@ function ProfilePostsTab({ user, currentUser }: ProfilePostsTabInterface) {
   }, [fetchContent])
 
   return (
-    <TabsContent value="posts" className="w-full h-full pt-16">
-      <div className="w-full max-w-xl mx-auto space-y-4">
-        {content &&
+    <TabsContent
+      value="posts"
+      className="w-full h-fit pt-8 flex justify-center"
+    >
+      <div className="space-y-4">
+        {!loading &&
+          content &&
           content?.map((post, i) => {
             return (
-              <Fragment key={i}>
+              <div key={i}>
                 <PostItem
                   currUsername={currentUser.username || ""}
                   content={content}
@@ -82,7 +86,7 @@ function ProfilePostsTab({ user, currentUser }: ProfilePostsTabInterface) {
                     ) || false
                   }
                 />
-              </Fragment>
+              </div>
             )
           })}
       </div>

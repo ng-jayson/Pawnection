@@ -53,7 +53,11 @@ function ProfileTabs({
       <ProfilePostsTab user={user} currentUser={currentUser} />
 
       {user.type === UserType.PetAdoptionCentre && (
-        <ProfileAdoptablePetsTab user={user} isProfileOwner={isProfileOwner} currentUser={currentUser}/>
+        <ProfileAdoptablePetsTab
+          user={user}
+          isProfileOwner={isProfileOwner}
+          currentUser={currentUser}
+        />
       )}
 
       <ProfileReportsTab reports={reports} />

@@ -47,7 +47,7 @@ const UserItem = ({
   }
 
   return (
-    <div className="flex rounded-xl border w-[409px] bg-white px-8 py-8 items-center justify-between">
+    <div className="flex rounded-xl border w-[89.2vw] md:w-[409px] bg-white px-8 py-8 items-center justify-between">
       <Link href={`/profile/${user.username}`} target="_blank">
         <div className="flex flex-row items-center transition-all duration-300 ease-in-out hover:cursor-pointer hover:opacity-80">
           <Image

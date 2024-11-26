@@ -189,11 +189,11 @@ const PostItem = ({
   }
 
   return (
-    <div className="rounded-xl border bg-white h-full w-[598px]">
-      <div className="flex items-center px-6 py-4 justify-between">
+    <div className="rounded-xl border bg-white h-full w-[89.2vw] md:w-[598px]">
+      <div className="flex items-center p-4 md:px-6 md:py-4 justify-between">
         <div className="transition-all duration-300 ease-in-out hover:cursor-pointer ">
           <Link href={`/profile/${post.user.username}`} target="_blank">
-            <div className="flex flex-row items-center space-x-3  ">
+            <div className="flex flex-row items-center space-x-2 md:space-x-3  ">
               <Image
                 src={
                   !post.user?.image
@@ -222,6 +222,7 @@ const PostItem = ({
         {!isOwnProfile ? (
           !isCurrentFollowedState ? (
             <Button
+              className="h-8"
               onClick={async () => {
                 await fetch("/api/user/follow", {
                   method: "POST",

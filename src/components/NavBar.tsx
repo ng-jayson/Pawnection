@@ -257,7 +257,7 @@ function NavBar({ currentUser }: { currentUser?: SafeUser | null }) {
                   </Link>
                 </li>
                 <li>
-                  <div className="ml-3">
+                  <div className="ml-3" onClick={toggleMenu}>
                     <PostForm />
                   </div>
                 </li>

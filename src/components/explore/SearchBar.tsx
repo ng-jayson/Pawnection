@@ -52,7 +52,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className="flex flex-row space-x-2 items-center">
+    <div className="flex flex-row space-x-2 items-center w-[89.2vw] mx-auto md:w-full">
       <div className="flex flex-row items-center">
         <div className="relative flex grow items-center bg-white rounded-md">
           <Input
@@ -84,7 +84,7 @@ const SearchBar = () => {
         onValueChange={handleFilterChange}
         defaultValue="post"
       >
-        <SelectTrigger className="w-[120px]">
+        <SelectTrigger className="w-[180px] p-2">
           <SelectValue placeholder="Select filter" />
         </SelectTrigger>
         <SelectContent>
@@ -101,7 +101,7 @@ const SearchBar = () => {
               setFollowing(value ? "true" : "")
             }}
           />
-          <p className="text-[11px] whitespace-nowrap">See followings only</p>
+          <p className="text-[11px] whitespace-nowrap">Followings</p>
         </>
       )}
     </div>

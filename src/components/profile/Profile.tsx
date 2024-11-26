@@ -76,7 +76,7 @@ const Profile = ({
   return (
     <div className="w-full max-w-[1240px] mx-auto xl:px-0 px-4">
       <div className="flex flex-col items-center">
-        <div className="flex items-center gap-8 py-[60px]">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 pt-[60px] pb-[40px]">
           <div className="flex flex-col items-center space-y-4">
             <Image
               className="object-cover w-20 h-20 md:w-40 md:h-40 p-1 rounded-full ring-2 ring-primary"
@@ -91,8 +91,8 @@ const Profile = ({
           </div>
 
           <div className="col-span-5">
-            <div className="flex gap-8 mb-2 items-center">
-              <HeaderTitle className="break-words text-left ml-4 w-[230px] ">
+            <div className="flex flex-col md:flex-row gap-8 mb-2 items-center">
+              <HeaderTitle className="break-words text-center md:text-left ml-0  md:ml-4 w-full ">
                 {user.username}
               </HeaderTitle>
               {!isProfileOwner ? (
@@ -141,6 +141,204 @@ const Profile = ({
                   </Button>
                 )
               ) : null}
+            </div>
+
+            <div className="mt-4 flex flex-row gap-8 items-center">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    className="hover:bg-transparent"
+                    variant="ghost"
+                    disabled={!currentUser}
+                  >
+                    {fo.followingCount} Following
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px] max-h-[70vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogDescription>Following</DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-1">
+                    {user.following && user.following.length > 0 ? (
+                      user.following?.map((following) => (
+                        <Link
+                          href={`/profile/${following.username}`}
+                          key={following.username}
+                          className="flex items-center justify-between hover:bg-gray-200/20 p-2 rounded-lg transition-all duration-200"
+                        >
+                          <div className="flex items-center gap-4">
+                            <Image
+                              className="object-cover w-10 h-10 rounded-full"
+                              src={
+                                following.image ? following.image : "/icon.png"
+                              }
+                              width={40}
+                              height={40}
+                              alt="Bordered avatar"
+                            />
+                            <p>{following.username}</p>
+                          </div>
+                          {!(following.username === currentUser?.username) ? (
+                            !following.isCurrentFollowed ? (
+                              <Button
+                                variant="default"
+                                size="sm"
+                                onClick={async () => {
+                                  await fetch("/api/user/follow", {
+                                    method: "POST",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify({
+                                      username: following.username,
+                                    }),
+                                  }).then(() => {
+                                    setIsCurrentFollowed(true)
+                                    setFo((prev) => ({
+                                      ...prev,
+                                      followerCount:
+                                        prev.followerCount &&
+                                        prev.followerCount + 1,
+                                    }))
+                                  })
+                                }}
+                              >
+                                Follow
+                              </Button>
+                            ) : (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={async () => {
+                                  await fetch("/api/user/unfollow", {
+                                    method: "POST",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify({
+                                      username: following.username,
+                                    }),
+                                  }).then(() => {
+                                    setIsCurrentFollowed(false)
+                                    setFo((prev) => ({
+                                      ...prev,
+                                      followerCount:
+                                        prev.followerCount &&
+                                        prev.followerCount - 1,
+                                    }))
+                                  })
+                                }}
+                              >
+                                Unfollow
+                              </Button>
+                            )
+                          ) : null}
+                        </Link>
+                      ))
+                    ) : (
+                      <p className="text-center">No following</p>
+                    )}
+                  </div>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    className="hover:bg-transparent"
+                    variant="ghost"
+                    disabled={!currentUser}
+                  >
+                    {fo.followerCount} Follower
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px] max-h-[70vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogDescription>Follower</DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-1">
+                    {user.followers && user.followers.length > 0 ? (
+                      user.followers?.map((follower) => (
+                        <Link
+                          href={`/profile/${follower.username}`}
+                          key={follower.username}
+                          className="flex items-center justify-between hover:bg-gray-200/20 p-2 rounded-lg transition-all duration-200"
+                        >
+                          <div className="flex items-center gap-4">
+                            <Image
+                              className="object-cover w-10 h-10 rounded-full"
+                              src={
+                                follower.image ? follower.image : "/icon.png"
+                              }
+                              width={40}
+                              height={40}
+                              alt="Bordered avatar"
+                            />
+                            <p>{follower.username}</p>
+                          </div>
+                          {!(follower.username === currentUser?.username) ? (
+                            !follower.isCurrentFollowed ? (
+                              <Button
+                                variant="default"
+                                size="sm"
+                                onClick={async () => {
+                                  await fetch("/api/user/follow", {
+                                    method: "POST",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify({
+                                      username: follower.username,
+                                    }),
+                                  }).then(() => {
+                                    setIsCurrentFollowed(true)
+                                    setFo((prev) => ({
+                                      ...prev,
+                                      followerCount:
+                                        prev.followerCount &&
+                                        prev.followerCount + 1,
+                                    }))
+                                  })
+                                }}
+                              >
+                                Follow
+                              </Button>
+                            ) : (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={async () => {
+                                  await fetch("/api/user/unfollow", {
+                                    method: "POST",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify({
+                                      username: follower.username,
+                                    }),
+                                  }).then(() => {
+                                    setIsCurrentFollowed(false)
+                                    setFo((prev) => ({
+                                      ...prev,
+                                      followerCount:
+                                        prev.followerCount &&
+                                        prev.followerCount - 1,
+                                    }))
+                                  })
+                                }}
+                              >
+                                Unfollow
+                              </Button>
+                            )
+                          ) : null}
+                        </Link>
+                      ))
+                    ) : (
+                      <p className="text-center">No followers</p>
+                    )}
+                  </div>
+                </DialogContent>
+              </Dialog>
               {isProfileOwner && (
                 <Button className="md:px-4 px-2">
                   <Link href="/settings">Edit profile</Link>
@@ -148,201 +346,7 @@ const Profile = ({
               )}
             </div>
 
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  className="hover:bg-transparent"
-                  variant="ghost"
-                  disabled={!currentUser}
-                >
-                  {fo.followingCount} Following
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] max-h-[70vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogDescription>Following</DialogDescription>
-                </DialogHeader>
-                <div className="space-y-1">
-                  {user.following && user.following.length > 0 ? (
-                    user.following?.map((following) => (
-                      <Link
-                        href={`/profile/${following.username}`}
-                        key={following.username}
-                        className="flex items-center justify-between hover:bg-gray-200/20 p-2 rounded-lg transition-all duration-200"
-                      >
-                        <div className="flex items-center gap-4">
-                          <Image
-                            className="object-cover w-10 h-10 rounded-full"
-                            src={
-                              following.image ? following.image : "/icon.png"
-                            }
-                            width={40}
-                            height={40}
-                            alt="Bordered avatar"
-                          />
-                          <p>{following.username}</p>
-                        </div>
-                        {!(following.username === currentUser?.username) ? (
-                          !following.isCurrentFollowed ? (
-                            <Button
-                              variant="default"
-                              size="sm"
-                              onClick={async () => {
-                                await fetch("/api/user/follow", {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                  },
-                                  body: JSON.stringify({
-                                    username: following.username,
-                                  }),
-                                }).then(() => {
-                                  setIsCurrentFollowed(true)
-                                  setFo((prev) => ({
-                                    ...prev,
-                                    followerCount:
-                                      prev.followerCount &&
-                                      prev.followerCount + 1,
-                                  }))
-                                })
-                              }}
-                            >
-                              Follow
-                            </Button>
-                          ) : (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={async () => {
-                                await fetch("/api/user/unfollow", {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                  },
-                                  body: JSON.stringify({
-                                    username: following.username,
-                                  }),
-                                }).then(() => {
-                                  setIsCurrentFollowed(false)
-                                  setFo((prev) => ({
-                                    ...prev,
-                                    followerCount:
-                                      prev.followerCount &&
-                                      prev.followerCount - 1,
-                                  }))
-                                })
-                              }}
-                            >
-                              Unfollow
-                            </Button>
-                          )
-                        ) : null}
-                      </Link>
-                    ))
-                  ) : (
-                    <p className="text-center">No following</p>
-                  )}
-                </div>
-              </DialogContent>
-            </Dialog>
-
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  className="hover:bg-transparent"
-                  variant="ghost"
-                  disabled={!currentUser}
-                >
-                  {fo.followerCount} Follower
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] max-h-[70vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogDescription>Follower</DialogDescription>
-                </DialogHeader>
-                <div className="space-y-1">
-                  {user.followers && user.followers.length > 0 ? (
-                    user.followers?.map((follower) => (
-                      <Link
-                        href={`/profile/${follower.username}`}
-                        key={follower.username}
-                        className="flex items-center justify-between hover:bg-gray-200/20 p-2 rounded-lg transition-all duration-200"
-                      >
-                        <div className="flex items-center gap-4">
-                          <Image
-                            className="object-cover w-10 h-10 rounded-full"
-                            src={follower.image ? follower.image : "/icon.png"}
-                            width={40}
-                            height={40}
-                            alt="Bordered avatar"
-                          />
-                          <p>{follower.username}</p>
-                        </div>
-                        {!(follower.username === currentUser?.username) ? (
-                          !follower.isCurrentFollowed ? (
-                            <Button
-                              variant="default"
-                              size="sm"
-                              onClick={async () => {
-                                await fetch("/api/user/follow", {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                  },
-                                  body: JSON.stringify({
-                                    username: follower.username,
-                                  }),
-                                }).then(() => {
-                                  setIsCurrentFollowed(true)
-                                  setFo((prev) => ({
-                                    ...prev,
-                                    followerCount:
-                                      prev.followerCount &&
-                                      prev.followerCount + 1,
-                                  }))
-                                })
-                              }}
-                            >
-                              Follow
-                            </Button>
-                          ) : (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={async () => {
-                                await fetch("/api/user/unfollow", {
-                                  method: "POST",
-                                  headers: {
-                                    "Content-Type": "application/json",
-                                  },
-                                  body: JSON.stringify({
-                                    username: follower.username,
-                                  }),
-                                }).then(() => {
-                                  setIsCurrentFollowed(false)
-                                  setFo((prev) => ({
-                                    ...prev,
-                                    followerCount:
-                                      prev.followerCount &&
-                                      prev.followerCount - 1,
-                                  }))
-                                })
-                              }}
-                            >
-                              Unfollow
-                            </Button>
-                          )
-                        ) : null}
-                      </Link>
-                    ))
-                  ) : (
-                    <p className="text-center">No followers</p>
-                  )}
-                </div>
-              </DialogContent>
-            </Dialog>
-
-            <p className="ml-4 text-sm py-2">{user?.bio}</p>
+            <p className="ml-4 text-sm pt-8">{user?.bio}</p>
           </div>
         </div>
       </div>
