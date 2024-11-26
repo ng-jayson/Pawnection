@@ -32,7 +32,7 @@ export default async function AdoptPetRequests() {
 
           <div className="mx-auto flex flex-col items-center">
             <HeaderTitle className="max-w-full max-md:text-3xl">
-              My Adoption Requests
+              My Requests
             </HeaderTitle>
           </div>
         </div>

@@ -41,16 +41,14 @@ export default async function AdoptProcessPage({
 
           <div className="mx-auto flex flex-col items-center">
             <HeaderTitle className="max-w-full max-md:text-3xl">
-              {isCurrentAdopt
-                ? "Adoption Request Information"
-                : "Adoption Request Form"}
+              {isCurrentAdopt ? "Request Details" : "Adoption Request"}
             </HeaderTitle>
           </div>
         </div>
       </div>
 
       <div className="relative grid sm:grid-cols-1 md:grid-cols-3 gap-8 px-4">
-        <div className="sticky top-28 rounded-xl bg-white h-fit md:col-span-1 shadow-lg">
+        <div className="md:sticky top-28 rounded-xl bg-white h-fit md:col-span-1 shadow-lg">
           <div>
             <Image
               src={adoptablePet.imageUrl}
@@ -89,8 +87,8 @@ export default async function AdoptProcessPage({
             <p>{adoptablePet.description}</p>
           </div>
         </div>
-        <div className="h-full md:col-span-2 px-4">
-          <div className="ml-16">
+        <div className="w-full h-fit md:col-span-2 md:px-4">
+          <div className="md:ml-16">
             {isCurrentAdopt ? (
               <>
                 <div className="mb-12 rounded-xl px-4 py-1 flex items-cente w-fit border shadow-md">

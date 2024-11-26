@@ -67,7 +67,7 @@ const AdoptPost = () => {
   }
 
   return (
-    <div className="w-full max-w-[1240px] mx-auto xl:px-0 px-8">
+    <div className="w-full max-w-[1240px] mx-auto">
       <div className="flex flex-col items-center py-[45px] space-y-2 w-full">
         <HeaderTitle className="max-w-full">Adoptable Pets</HeaderTitle>
         <div className="flex items-center justify-center space-x-2 mb-6 mr-6">
@@ -94,7 +94,7 @@ const AdoptPost = () => {
               <Input
                 type="text"
                 placeholder="Search..."
-                className="pr-20 py-2 grow bg-white outline-none rounded-md"
+                className="pr-16 md:pr-24 py-2 grow bg-white outline-none rounded-md"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -115,11 +115,11 @@ const AdoptPost = () => {
           <Link
             className={cn(
               buttonVariants({ variant: "default" }),
-              "px-2 sm:px-4 py-2 ml-3 sm:ml-6",
+              "px-2 sm:px-4 py-2 ml-3 sm:ml-6 w-24 md:w-48",
             )}
             href="/adopt/requests"
           >
-            View my requests
+            My requests
           </Link>
         </div>
       </div>
@@ -129,7 +129,7 @@ const AdoptPost = () => {
           <Loading />
         </div>
       ) : filteredPets !== null && filteredPets.length > 0 ? (
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 px-5 xl:px-0">
           {filteredPets.map((pet) => (
             <Link
               href={
