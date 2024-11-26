@@ -66,7 +66,7 @@
   margin: 8px 0 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .article {
     max-width: 100%;
   }

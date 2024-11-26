@@ -69,16 +69,14 @@ function PetTips() {
     <main className={tipStyles["main-content"]}>
       <div className={tipStyles["hero-section"]}>
         <div className={tipStyles["hero-column"]}>
-          <div>
-            <Image
-              width={590}
-              height={592}
-              loading="lazy"
-              src="/static/images/dog_front.webp"
-              alt="Pet Tips and Advice"
-              className="w-1/2 md:w-3/4 mx-auto"
-            />
-          </div>
+          <Image
+            width={590}
+            height={592}
+            loading="lazy"
+            src="/static/images/dog_front.webp"
+            alt="Pet Tips and Advice"
+            className="w-1/2 md:w-3/4 mx-auto"
+          />
         </div>
         <div className={tipStyles["hero-column"]}>
           <div className={tipStyles["hero-text-content"]}>
@@ -86,11 +84,11 @@ function PetTips() {
             <p className={tipStyles["hero-subtitle"]}>
               Discover helpful articles and expert advice
             </p>
-            <div className={tipStyles["main-container"]}>
-              {articles.map((article, index) => (
-                <Article key={index} {...article} />
-              ))}
-            </div>
+          </div>
+          <div className={tipStyles["main-container"]}>
+            {articles.map((article, index) => (
+              <Article key={index} {...article} />
+            ))}
           </div>
         </div>
       </div>

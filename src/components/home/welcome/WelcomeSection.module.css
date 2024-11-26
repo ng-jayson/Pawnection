@@ -3,7 +3,7 @@
   display: flex;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
     flex-direction: column-reverse;
@@ -21,7 +21,7 @@
   margin: auto 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .hero-content {
     width: 100%;
     max-width: 100%;
@@ -38,10 +38,11 @@
     sans-serif;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .hero-title {
     max-width: 100%;
     font-size: 40px;
+    text-align: center;
   }
 }
 
@@ -55,10 +56,11 @@
     sans-serif;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .hero-description {
     margin-top: 8px;
     max-width: 100%;
+    text-align: center;
   }
 }
 
@@ -73,13 +75,20 @@
   line-height: 150%;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .login-button {
     padding: 0 20px;
   }
+
+  .hero-actions {
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .signup-button {
     padding: 0 20px;
   }
@@ -93,7 +102,7 @@
   margin-left: 20px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .hero-image-container {
     width: 100%;
   }
