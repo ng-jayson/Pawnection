@@ -30,10 +30,6 @@ const nextConfig = {
     config.externals = [...config.externals, "bcrypt"]
     return config
   },
-  eslint: {
-    // Skip ESLint during builds to avoid circular config issues in CI
-    ignoreDuringBuilds: true,
-  },
 }
 
 export default nextConfig
