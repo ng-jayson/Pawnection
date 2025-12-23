@@ -1,6 +1,6 @@
 # Pawnection
 
-Please read these points before getting started:
+Please read these points before getting started
 
 1. Please always make a separate branch if you are building or updating something
 2. When updating (invoking and retrieveing) something related to the schema or database does not work with NUS Wifi (Firewall against MongoDB)
